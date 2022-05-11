@@ -9,7 +9,7 @@ const Available = () => {
   const [adult, setAdult] = useState("");
   const [children, setChildren] = useState("");
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const router = useRouter();
 
@@ -17,7 +17,7 @@ const Available = () => {
 
   const handleCheckAvailability = (e) => {
     e.preventDefault();
-    setLoading(true);
+
     if (checkin && checkout) {
       router.push({
         pathname: "/check-availability",
@@ -94,9 +94,9 @@ const Available = () => {
                   .
                 </label>
 
-                {!loading && <button type="submit">Check Availability</button>}
+                {loading && <button type="submit">Check Availability</button>}
                 {/* LOADING INDICATOR */}
-                {loading && (
+                {!loading && (
                   <button>
                     <Spinner animation="border" size="sm" />
                   </button>

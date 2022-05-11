@@ -35,8 +35,14 @@ const EventsReservations = () => {
   useEffect(() => {
     let isCanceled = false;
     const get_events = async () => {
-      const response = await axios.get(`${BASE_URL}/api/get_all_events`);
+      const response = await axios.get(`${BASE_URL}/api/get_all_events`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        },
+      });
       if (!isCanceled) {
+        setIsLoading(false);
         if (!response.data.success) {
           setIsError(true);
         } else if (response.data.data.length === 0) {
@@ -52,7 +58,6 @@ const EventsReservations = () => {
 
     return () => {
       isCanceled = true;
-      setIsLoading(false);
     };
   }, []);
 

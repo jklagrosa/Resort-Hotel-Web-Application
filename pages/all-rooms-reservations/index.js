@@ -37,7 +37,12 @@ const RoomsReservation = () => {
 
   useEffect(() => {
     const get_rooms = async () => {
-      const response = await axios.get(`${BASE_URL}/api/get_all_rooms`);
+      const response = await axios.get(`${BASE_URL}/api/get_all_rooms`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        },
+      });
       if (!response.data.success) {
         setData(null);
         setError(true);
@@ -63,7 +68,13 @@ const RoomsReservation = () => {
     const payload = { id };
     const deleteRoom = await axios.post(
       `${BASE_URL}/api/delete_rooms`,
-      payload
+      payload,
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        },
+      }
     );
     if (!deleteRoom.data.success) {
       setLoading(false);

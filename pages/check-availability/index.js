@@ -36,7 +36,13 @@ const Check_Availablity = ({ q }) => {
   useEffect(() => {
     const availableDates = async () => {
       const response = await axios.get(
-        `${BASE_URL}/api/fetchroom?checkin=${parsed_q.checkin}&checkout=${parsed_q.checkout}`
+        `${BASE_URL}/api/fetchroom?checkin=${parsed_q.checkin}&checkout=${parsed_q.checkout}`,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+          },
+        }
       );
 
       console.log(response.data.data);

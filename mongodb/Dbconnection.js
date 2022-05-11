@@ -23,7 +23,7 @@ const Dbconnection = async () => {
   }
 
   const db = await mongoose.connect(
-    `mongodb+srv://devonly:devonly@resort-hotel-web-app.nukfu.mongodb.net/RESORT_HOTEL_DB?retryWrites=true&w=majority`,
+    `${process.env.MONGO_URI}`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
