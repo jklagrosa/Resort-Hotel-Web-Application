@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { dbString } from "../config/config";
 
 // try {
 //   mongoose.connect(
@@ -22,13 +23,10 @@ const Dbconnection = async () => {
     return;
   }
 
-  const db = await mongoose.connect(
-    `${process.env.MONGO_URI}`,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  );
+  const db = await mongoose.connect(dbString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 
   connection.isConnected = db.connections[0].readyState;
   if (connection.isConnected) {
