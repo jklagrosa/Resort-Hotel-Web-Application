@@ -1,0 +1,120 @@
+@import "../styles/colors.module.scss";
+
+.containerWrapper{
+    padding: 4rem;
+    background-color: $BLACK;
+    color: darkgrey;
+
+    @media only screen and (max-width: 576px) { 
+        padding: 2rem 1rem;   
+    }
+
+    h1{
+        overflow: hidden;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        text-align: left;
+        font-weight: bold;
+
+        
+        @media only screen and (min-width: 2501px) { 
+            font-size: 4rem;
+        }
+
+        @media only screen and (min-width: 2001px) and (max-width: 2500px) { 
+            font-size: 3rem;
+        }
+    }
+
+    .columnWrapper{
+        margin-bottom: 1.25rem;
+    }
+
+    p{
+        max-width: 250px;
+        width: 100%;
+        font-size: 1rem;
+
+        @media only screen and (min-width: 2501px) { 
+            max-width: 500px;
+            width: 100%;
+            font-size: 2rem;
+        }
+
+        @media only screen and (min-width: 2001px) and (max-width: 2500px) { 
+            max-width: 450px;
+            width: 100%;
+            font-size: 1.5rem;
+        }
+
+        @media only screen and (min-width: 1600px) and (max-width: 2000px) { 
+            max-width: 400px;
+            width: 100%;
+            font-size: 1.25rem;  
+        }
+
+    }
+
+    span{
+        color: $TEAL;
+        text-transform: lowercase;
+        font-weight: normal;
+    }
+
+    h3{
+        overflow: hidden;
+        font-size: 1.1rem;
+        font-weight: normal;
+        color: $PINK-BG;
+
+        @media only screen and (min-width: 2501px) { 
+            font-size: 2.25rem;
+        }
+
+        @media only screen and (min-width: 2001px) and (max-width: 2500px) { 
+            font-size: 2rem;
+        }
+
+        @media only screen and (min-width: 1600px) and (max-width: 2000px) { 
+            font-size: 1.5rem;  
+        }
+
+    }
+
+    .contactLinks{
+        color: darkgrey;
+        text-decoration: none;
+        max-width: 100px;
+        width: 100%;
+
+        &:hover{
+            text-decoration: underline;
+        }
+
+        @media only screen and (min-width: 2501px) { 
+            max-width: 160px;
+            width: 100%;
+            font-size: 2rem;
+        }
+    }
+
+    a{
+        display: block;
+        margin-bottom: 0.8rem;
+        font-size: 1rem;
+
+        
+        @media only screen and (min-width: 2501px) { 
+            font-size: 2rem;
+        }
+
+        @media only screen and (min-width: 2001px) and (max-width: 2500px) { 
+            font-size: 1.5rem;
+        }
+
+        @media only screen and (min-width: 1600px) and (max-width: 2000px) { 
+            font-size: 1.25rem;  
+        }
+
+    }
+}

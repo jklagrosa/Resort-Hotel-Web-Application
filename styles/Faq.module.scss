@@ -1,0 +1,120 @@
+@import "../styles/colors.module.scss";
+
+.containerWrapper{
+    padding: 4rem;
+    background-color: $PURPLE;
+    color: $PINK-BG;
+
+    @media only screen and (max-width: 576px) { 
+        padding: 2rem 1rem;   
+    }
+
+    h2{
+        // About Us Heading
+        margin-bottom: 1rem;
+        overflow: hidden;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+
+        @media only screen and (min-width: 2501px) {
+            font-size: 6rem;
+       }
+
+        @media only screen and (min-width: 2201px) and (max-width: 2500px) {
+            font-size: 5rem;
+       }
+
+        @media only screen and (min-width: 1801px) and (max-width: 2200px) {
+            font-size: 4.5rem;
+       }
+
+        @media only screen and (min-width: 1400px) and (max-width: 1800px) {
+            font-size: 3rem;  
+        }
+
+
+        @media only screen and (max-width: 767px) {
+            text-align: left;
+
+        }
+
+    }
+
+    .accordionContainer{
+        margin: 0 auto;
+        max-width: 800px;
+        width: 100%;
+
+        @media only screen and (min-width: 2501px) {
+            max-width: 2200px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 2201px) and (max-width: 2500px) {
+            max-width: 2000px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 1801px) and (max-width: 2200px) {
+            max-width: 1500px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 1500px) and (max-width: 1800px) {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+    }
+
+    h3{
+        margin: 0;
+        font-size: 1.25rem;
+        overflow: hidden;
+
+        @media only screen and (min-width: 2501px) {
+            font-size: 2.25rem;
+        }
+
+        @media only screen and (min-width: 2201px) and (max-width: 2500px) {
+            font-size: 2rem;
+        }
+
+        @media only screen and (min-width: 1800px) and (max-width: 2200px) {
+            font-size: 1.563rem;
+        }
+
+
+        @media only screen and (max-width: 576px) {
+            font-size: 1rem;
+        }
+
+    }
+
+    p{
+        color: $BLACK;
+        font-size: 1rem;
+
+        @media only screen and (min-width: 2501px) {
+            font-size: 2.25rem;
+        }
+
+        @media only screen and (min-width: 2201px) and (max-width: 2500px) {
+            font-size: 2rem;
+        }
+
+        @media only screen and (min-width: 1801px) and (max-width: 2200px) {
+            font-size: 1.563rem;
+        }
+        
+        @media only screen and (min-width: 1500px) and (max-width: 1800px) {
+            font-size: 1.25rem;  
+        }
+    }
+}
+
+// .accordionHeader{
+//     background: red !important;
+// }

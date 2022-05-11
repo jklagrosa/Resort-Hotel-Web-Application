@@ -1,0 +1,438 @@
+@import "../styles/colors.module.scss";
+
+.PAGES_HEADER{
+    // background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%), url("../public/images/aboutbg.jpg") no-repeat;
+    background: linear-gradient( rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7)), url("../public/images/aboutbg.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 100vw;
+    min-height: 250px;
+    padding: 6rem 4rem;
+
+    @media only screen and (min-width: 2001px) { 
+        min-height: 350px;
+    }
+
+    @media only screen and (min-width: 1500px) and (max-width: 2000px) { 
+        min-height: 300px;
+    }
+
+    @media only screen and (max-width: 576px) {
+        padding: 6rem 1rem;
+    }
+
+    h2{
+        margin: 0;
+        overflow: hidden;
+        color: $PINK-BG;
+        font-weight: bold;
+        text-align: center;
+        font-size: 3rem;
+        text-transform: uppercase;
+
+        @media only screen and (min-width: 2001px) { 
+            margin-top: 2rem;
+        }
+
+        @media only screen and (max-width: 576px) {
+            margin-top: 1rem;
+            font-size: 2rem;
+        }
+
+    }
+
+}
+
+.Modal_Confirmation{
+    display: grid;
+    place-content: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+.confirmationHeader{
+    overflow: hidden;
+    font-size: 2rem;
+    color: $PURPLE;
+}
+
+
+
+.containerWrapper{
+    padding: 4rem;
+    background-color: $PINK-BG;
+    color: $PINK-BG;
+
+    @media only screen and (max-width: 576px) { 
+        padding: 2rem 0.1rem;   
+    }
+
+
+.ratingWrapper{
+    #Ratings_Badge{
+        margin-bottom: 1rem;
+                     
+     @media only screen and (min-width: 2501px) { 
+         font-size: 1.5rem;
+
+     }
+
+     @media only screen and (min-width: 2001px) and (max-width: 2500px) { 
+         font-size: 1.3rem;
+     }
+
+     @media only screen and (min-width: 1801px) and (max-width: 2000px) { 
+         font-size: 1.2rem;
+     }
+     @media only screen and (min-width: 1400px) and (max-width: 1800px) { 
+         font-size: 1rem;
+         
+     }
+    }
+}
+
+    #ROW{
+        margin: 0 auto;
+        margin-top: 3rem;
+        @media only screen and (max-width: 576px) { 
+            margin-top: 0;  
+        }
+    }
+
+    .Details_Section{
+
+        input, select{
+            all: unset;
+            display: block;
+            padding: 0.6rem;
+            max-width: 250px;
+            width: 100%;
+            border: 2px solid $PURPLE;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            background: $PINK-BG;
+            color: $BLACK;
+            &::placeholder{
+                color: $BLACK;
+            }
+
+            @media only screen and (min-width: 2501px) { 
+                max-width: 380px;
+                width: 100%;
+                font-size: 2.25rem;
+            }
+
+            @media only screen and (min-width: 2301px) and (max-width: 2500px) { 
+                max-width: 380px;
+                width: 100%;
+                font-size: 2.25rem;
+            }
+
+            @media only screen and (min-width: 2001px) and (max-width: 2300px) { 
+                max-width: 370px;
+                width: 100%;
+                font-size: 2rem;
+            }
+
+            @media only screen and (min-width: 1801px) and (max-width: 2000px) { 
+                max-width: 370px;
+                width: 100%;
+                font-size: 1.563rem;
+            }
+
+            @media only screen and (min-width: 1400px) and (max-width: 1800px) { 
+                max-width: 350px;
+                width: 100%;
+                font-size: 1.25rem;
+            }
+
+            @media only screen and (min-width: 992px) and (max-width: 1100px) { 
+                max-width: 230px;
+                width: 100%;
+            }
+
+            @media only screen and (min-width: 890px) and (max-width: 991px) { 
+                max-width: 200px;
+                width: 100%;
+            }
+
+            
+            @media only screen and (min-width: 768px) and (max-width: 889px) { 
+                max-width: 150px;
+                width: 100%;
+            }
+
+            @media only screen and (min-width: 400px) and (max-width: 767px) { 
+                max-width: 250px;
+                width: 100%;
+            }
+
+            @media only screen and (max-width: 399px) { 
+                max-width: 200px;
+                width: 100%;
+            }
+
+       
+
+        }
+
+        label{
+            margin-bottom: 0.3rem;
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+            color: $BLACK;
+
+            
+            @media only screen and (min-width: 2501px) { 
+                font-size: 2.25rem;
+            }
+
+            @media only screen and (min-width: 1801px) and (max-width: 2500px) { 
+                font-size: 2rem;
+            }
+
+            @media only screen and (min-width: 1400px) and (max-width: 1800px) { 
+                font-size: 1.25rem;
+            }
+        }
+
+        button{
+            all: unset;
+            cursor: pointer;
+            // margin-top: 1rem;
+            // max-width: 250px;
+            display: block;
+            text-align: center;
+            max-width: 80px;
+            width: 100%;
+            background: $PURPLE;
+            color: $PINK-BG;
+            padding: 0.6rem 1rem;
+            font-size: 1rem;
+            border: 2px solid $PURPLE;
+            transition: all 0.2s ease-in;
+            border-radius: 8px;
+
+
+            @media only screen and (min-width: 2501px) { 
+                max-width: 370px;
+                width: 100%;
+                font-size: 2.25rem;
+            }
+
+           
+            @media only screen and (min-width: 2301px) and (max-width: 2500px) { 
+                max-width: 360px;
+                width: 100%;
+                font-size: 2.25rem;
+            }
+
+            
+            @media only screen and (min-width: 2001px) and (max-width: 2300px) { 
+                max-width: 250px;
+                width: 100%;
+                font-size: 2rem;
+            }
+            
+            @media only screen and (min-width: 1801px) and (max-width: 2000px) { 
+                max-width: 200px;
+                width: 100%;
+                font-size: 1.563rem;
+            }
+
+            @media only screen and (min-width: 1400px) and (max-width: 1800px) { 
+                max-width: 150px;
+                width: 100%;
+                font-size: 1.25rem;
+      
+            }
+
+       
+
+            // @media only screen and (min-width: 850px) and (max-width: 1024px) { 
+            //     max-width: 200px;
+            //     width: 100%;
+            // }
+
+            
+            @media only screen and (min-width: 768px) and (max-width: 849px) { 
+                max-width: 135px;
+                width: 100%;
+            }
+
+            @media only screen and (min-width: 400px) and (max-width: 767px) { 
+                max-width: 100px;
+                width: 100%;
+            }
+
+            @media only screen and (max-width: 399px) { 
+                max-width: 190px;
+                width: 100%;
+            }
+
+
+       
+            &:hover{
+                transition: all 0.2s ease-out;
+                background-color: #060840;
+            }
+        }
+
+
+        h2{
+            // About Us Heading
+            margin-bottom: 1rem;
+            overflow: hidden;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $BLACK;
+    
+            @media only screen and (min-width: 2501px) {
+                font-size: 6rem;
+           }
+    
+            @media only screen and (min-width: 2201px) and (max-width: 2500px) {
+                font-size: 5rem;
+           }
+    
+            @media only screen and (min-width: 1801px) and (max-width: 2200px) {
+                font-size: 4.5rem;
+           }
+    
+            @media only screen and (min-width: 1400px) and (max-width: 1800px) {
+                font-size: 3rem;  
+            }
+        }
+    }
+
+    .LARGE_Image_Section{
+        text-align: center;
+        img{
+            max-width: 750px;
+        width: 100%;
+        max-height: 350px;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+        @media only screen and (min-width: 2501px) { 
+            max-width: 1400px;
+            width: 100%;
+            min-height: 650px;
+        }
+             
+        @media only screen and (min-width: 2301px) and (max-width: 2500px) { 
+            max-width: 1200px;
+            width: 100%;
+            min-height: 650px;
+        }
+
+        @media only screen and (min-width: 2001px) and (max-width: 2300px) { 
+            max-width: 1000px;
+            width: 100%;
+            min-height: 600px;
+        }
+
+        @media only screen and (min-width: 1801px) and (max-width: 2000px) { 
+            max-width: 900px;
+            width: 100%;
+            min-height: 500px;
+  
+        }
+
+        @media only screen and (min-width: 1400px) and (max-width: 1800px) { 
+            max-width: 805px;
+            width: 100%;
+            max-height: 350px;
+        }
+
+        @media only screen and (min-width: 992px) and (max-width: 1100px) { 
+            max-width: 600px;
+            width: 100%;
+            max-height: 350px;
+        }
+
+        @media only screen and (min-width: 890px) and (max-width: 991px) { 
+            max-width: 460px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 889px) { 
+            max-width: 400px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 576px) and (max-width: 767px) {
+            max-width: 800px;
+            width: 100%;
+            max-height: 200px;
+        }
+
+        
+        }
+    }
+
+    .Image_Section{
+        text-align: center;
+        margin-bottom: 2rem;
+        img{
+            max-width: 700px;
+        width: 100%;
+        max-height: 300px;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+        @media only screen and (min-width: 2501px) { 
+            max-width: 600px;
+            width: 100%;
+            max-height: 380px;
+        }
+
+        @media only screen and (min-width: 2301px) and (max-width: 2500px) { 
+            max-width: 600px;
+            width: 100%;
+            max-height: 350px;
+        }
+                       
+        @media only screen and (min-width: 2001px) and (max-width: 2300px) { 
+            max-width: 500px;
+            width: 100%;
+            max-height: 350px;
+        }
+
+        @media only screen and (min-width: 1801px) and (max-width: 2000px) { 
+            max-width: 450px;
+            width: 100%;
+            max-height: 350px;
+  
+        }
+
+        @media only screen and (min-width: 1400px) and (max-width: 1800px) { 
+            max-width: 390px;
+            width: 100%;
+            max-height: 350px;
+        }
+
+        @media only screen and (min-width: 890px) and (max-width: 991px) { 
+         
+            max-width: 225px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 889px) {
+            max-width: 200px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 576px) and (max-width: 767px) {
+            max-width: 400px;
+            width: 100%;
+            min-height: 100px;
+        }
+            
+        }
+    }
+}
