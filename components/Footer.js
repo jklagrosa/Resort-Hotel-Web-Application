@@ -14,7 +14,7 @@ const Footer = () => {
               <p>
                 If you want to try this web application, you can login as Demo
                 user. Click the login button to redirect to login page and then
-                click the <code>"Login as demo user"</code> button.
+                click the <code>&quot;Login as demo user&quot;</code> button.
               </p>
             </Col>
             <Col xs={12} md={6} lg={4} className={styles.columnWrapper}>
@@ -23,6 +23,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/jklagrosa/"
                 target="_blank"
                 className={styles.contactLinks}
+                rel="noreferrer"
               >
                 LinkedIn
               </a>
@@ -30,6 +31,7 @@ const Footer = () => {
                 href="https://github.com/jklagrosa"
                 target="_blank"
                 className={styles.contactLinks}
+                rel="noreferrer"
               >
                 Github
               </a>
@@ -37,6 +39,7 @@ const Footer = () => {
                 href="mailto:jklagrosa.dev@gmail.com"
                 target="_blank"
                 className={styles.contactLinks}
+                rel="noreferrer"
               >
                 Gmail
               </a>

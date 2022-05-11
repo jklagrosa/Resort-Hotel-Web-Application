@@ -27,7 +27,7 @@ const Hero = () => {
 
         {/* SCROLL DOWN ANIMATION */}
 
-        <div class={styles.mouse_scroll}>
+        <div className={styles.mouse_scroll}>
           <div className={styles.mouse}>
             <div className={styles.wheel}></div>
           </div>

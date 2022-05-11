@@ -14,7 +14,7 @@ const PageNotFound = () => {
         <Container fluid="lg">
           <div className={styles.NOT_FOUND_WRAPPER}>
             <h1>404: Page Not Found</h1>
-            <p>We can't find what you are looking for.</p>
+            <p>We cannot find what you are looking for.</p>
 
             <button onClick={() => router.push("/")}>Back To Home</button>
           </div>
