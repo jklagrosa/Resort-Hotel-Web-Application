@@ -21,6 +21,8 @@ const RoomsReservation = () => {
 
   const [isLoggedin, setIsLoggedin] = useState(false);
 
+  const [parentLoader, setParentLoader] = useState(true);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -51,6 +53,8 @@ const RoomsReservation = () => {
         setError(null);
         console.log(response.data);
       }
+
+      setParentLoader(false);
     };
     get_rooms();
   }, []);
@@ -118,68 +122,79 @@ const RoomsReservation = () => {
           <div className={styles.PAGES_HEADER}>
             <h2>Rooms Reservations</h2>
           </div>
-          <div className={styles.containerWrapper}>
-            {data.length > 0 &&
-              data.map((x) => (
-                <div className={styles.resultsContainer} key={x._id}>
-                  <Row className="g-0">
-                    <Col xs={12} md={4}>
-                      <img
-                        src={`/rooms/${x.img}`}
-                        className={styles.IMAGE_CARD}
-                      />
-                    </Col>
-                    <Col xs={12} md={8}>
-                      <div className={styles.room_details}>
-                        <span className={styles.HEADER_TITLE}>{x.title}</span>
 
-                        {x.rating >= 5 && (
-                          <span
-                            className="badge bg-danger"
-                            id={styles.Ratings_Badge}
-                          >
-                            {x.rating} <IoHeart />
-                          </span>
-                        )}
-                        {x.rating < 5 && (
-                          <span
-                            className="badge bg-success"
-                            id={styles.Ratings_Badge}
-                          >
-                            {x.rating} <IoHeart />
-                          </span>
-                        )}
-                        <hr className="my-2" />
-                        <h6>CheckIn: {x.checkin}</h6>
-                        <h6>CheckOut: {x.checkout}</h6>
-                        <h6>Adult: {x.adult == "" ? "1" : x.adult}</h6>
-                        <h6>Children: {x.children == "" ? "0" : x.children}</h6>
-                        <h6>Price: ₱{x.price} / Night</h6>
+          {parentLoader && (
+            <div style={{ padding: "4rem 1rem", textAlign: "center" }}>
+              <Spinner animation="border" />
+            </div>
+          )}
 
-                        {!loading && (
-                          <button onClick={() => handleDeleteRoom(x._id)}>
-                            <MdDelete /> Delete
-                          </button>
-                        )}
+          {!parentLoader && (
+            <div className={styles.containerWrapper}>
+              {data.length > 0 &&
+                data.map((x) => (
+                  <div className={styles.resultsContainer} key={x._id}>
+                    <Row className="g-0">
+                      <Col xs={12} md={4}>
+                        <img
+                          src={`/rooms/${x.img}`}
+                          className={styles.IMAGE_CARD}
+                        />
+                      </Col>
+                      <Col xs={12} md={8}>
+                        <div className={styles.room_details}>
+                          <span className={styles.HEADER_TITLE}>{x.title}</span>
 
-                        {loading && (
-                          <button>
-                            <Spinner animation="border" size="sm" />
-                          </button>
-                        )}
-                      </div>
-                    </Col>
-                  </Row>
+                          {x.rating >= 5 && (
+                            <span
+                              className="badge bg-danger"
+                              id={styles.Ratings_Badge}
+                            >
+                              {x.rating} <IoHeart />
+                            </span>
+                          )}
+                          {x.rating < 5 && (
+                            <span
+                              className="badge bg-success"
+                              id={styles.Ratings_Badge}
+                            >
+                              {x.rating} <IoHeart />
+                            </span>
+                          )}
+                          <hr className="my-2" />
+                          <h6>CheckIn: {x.checkin}</h6>
+                          <h6>CheckOut: {x.checkout}</h6>
+                          <h6>Adult: {x.adult == "" ? "1" : x.adult}</h6>
+                          <h6>
+                            Children: {x.children == "" ? "0" : x.children}
+                          </h6>
+                          <h6>Price: ₱{x.price} / Night</h6>
+
+                          {!loading && (
+                            <button onClick={() => handleDeleteRoom(x._id)}>
+                              <MdDelete /> Delete
+                            </button>
+                          )}
+
+                          {loading && (
+                            <button>
+                              <Spinner animation="border" size="sm" />
+                            </button>
+                          )}
+                        </div>
+                      </Col>
+                    </Row>
+                  </div>
+                ))}
+
+              {isEmpty && (
+                <div className={styles.NO_RESULTS_FOUND}>
+                  <h1>You don't have any room reservations.</h1>
+                  <Link href="/">Reserve now</Link>
                 </div>
-              ))}
-
-            {isEmpty && (
-              <div className={styles.NO_RESULTS_FOUND}>
-                <h1>You don't have any room reservations.</h1>
-                <Link href="/">Reserve now</Link>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
           <Footer />
           <Copyright />
         </>
