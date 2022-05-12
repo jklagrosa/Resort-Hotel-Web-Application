@@ -1,39 +1,35 @@
 import mongoose from "mongoose";
-import { dbString } from "../config/config";
 
-// try {
-//   mongoose.connect(
-//     process.env.MONGO_URI,
-//     {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true,
-//     },
-//     () => console.log("connected")
-//   );
-// } catch (error) {
-//   console.log("could not connect");
-// }
-
-// export default dbConnection;
-
-const connection = {};
+let connection = {};
+// let dbString = process.env.MONGODB_URI ? process.env.MONGODB_URI : "";
 
 const Dbconnection = async () => {
-  if (connection.isConnected) {
-    return;
-  }
+  if (connection) return connection;
 
-  const db = await mongoose.connect(dbString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  connection = await mongoose.connect(
+    `${process.env.MONGODB_URI}`,
 
-  connection.isConnected = db.connections[0].readyState;
-  if (connection.isConnected) {
-    console.log(`DB is now running.`);
-  } else {
-    console.log(`DB encountered an error.`);
-  }
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  );
+
+  // const db = await mongoose.createConnection(
+  //   process.env.MONGODB_URI ? `${process.env.MONGODB_URI}` : "",
+  //   // process.env.MONGODB_URI,
+  //   {
+  //     useNewUrlParser: true,
+  //     useUnifiedTopology: true,
+  //   }
+  // );
+
+  //   connection.isConnected = db.createConnection[0].readyState;
+  //   if (connection.isConnected) {
+  //     console.log(`DB is now running.`);
+  //   } else {
+  //     console.log(`DB encountered an error.`);
+  //   }
+  // };
 };
-
 export default Dbconnection;
