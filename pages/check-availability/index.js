@@ -1,6 +1,6 @@
 import styles from "../../styles/C_A_pages.module.scss";
 import { Container, Table, Spinner } from "react-bootstrap";
-import Navbar from "../../components/Navbar";
+import Navbar2 from "../../components/Navbar2";
 import Footer from "../../components/Footer";
 import Copyright from "../../components/Copyright";
 // import dbConnection from "../../mongodb/Dbconnection";
@@ -62,7 +62,7 @@ const Check_Availablity = ({ q }) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar2 />
       <div className={styles.PAGES_HEADER}>
         <h2>Availability</h2>
       </div>
