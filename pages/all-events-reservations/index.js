@@ -1,5 +1,5 @@
 import styles from "../../styles/C_E_pages.module.scss";
-import Navbar from "../../components/Navbar";
+import Navbar2 from "../../components/Navbar2";
 import Footer from "../../components/Footer";
 import Copyright from "../../components/Copyright";
 import { Container, Row, Col, Table, Spinner } from "react-bootstrap";
@@ -8,6 +8,7 @@ import axios from "axios";
 import { BASE_URL } from "../../config/config";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
+import Link from "next/link";
 
 const EventsReservations = () => {
   const [data, setData] = useState([]);
@@ -121,7 +122,7 @@ const EventsReservations = () => {
 
       {isLoggedin && (
         <>
-          <Navbar />
+          <Navbar2 />
           <div className={styles.PAGES_HEADER}>
             <h2>Events Reservations</h2>
           </div>
@@ -175,6 +176,7 @@ const EventsReservations = () => {
             {isEmpty && (
               <div className={styles.NO_RESULTS_FOUND}>
                 <h1>No results found.</h1>
+                <Link href="/">Book now</Link>
               </div>
             )}
 

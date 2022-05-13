@@ -1,5 +1,5 @@
 import styles from "../../styles/ALL_R_pages.module.scss";
-import Navbar from "../../components/Navbar";
+import Navbar2 from "../../components/Navbar2";
 import Footer from "../../components/Footer";
 import Copyright from "../../components/Copyright";
 import { Row, Col, Spinner } from "react-bootstrap";
@@ -118,7 +118,7 @@ const RoomsReservation = () => {
 
       {isLoggedin && (
         <>
-          <Navbar />
+          <Navbar2 />
           <div className={styles.PAGES_HEADER}>
             <h2>Rooms Reservations</h2>
           </div>
@@ -189,7 +189,7 @@ const RoomsReservation = () => {
 
               {isEmpty && (
                 <div className={styles.NO_RESULTS_FOUND}>
-                  <h1>You don't have any room reservations.</h1>
+                  <h1>No results found.</h1>
                   <Link href="/">Reserve now</Link>
                 </div>
               )}

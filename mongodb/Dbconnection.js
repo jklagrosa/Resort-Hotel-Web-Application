@@ -1,19 +1,24 @@
 import mongoose from "mongoose";
 
-let connection = {};
-// let dbString = process.env.MONGODB_URI ? process.env.MONGODB_URI : "";
-
 const Dbconnection = async () => {
-  if (connection) return connection;
+  if (mongoose.connections[0].readyState) {
+    console.log("DB already connected");
+    return;
+  }
 
-  connection = await mongoose.connect(
-    `${process.env.MONGODB_URI}`,
+  return await mongoose
+    .connect(
+      process.env.mongo_uri,
 
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  );
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    )
+    .then((result) => {
+      if (result) return;
+    })
+    .catch((err) => console.log("DB Error: " + err));
 
   // const db = await mongoose.createConnection(
   //   process.env.MONGODB_URI ? `${process.env.MONGODB_URI}` : "",

@@ -60,7 +60,7 @@
     .NO_RESULTS_FOUND{
         margin-top: 1rem;
         h1{
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             overflow: hidden;
             color: gray;
             font-size: 2rem;
@@ -80,8 +80,8 @@
         }
     
         a{
-    
             font-size: 1.1rem;
+            
     
             @media only screen and (min-width: 2501px){ 
                 font-size: 2.25rem; 

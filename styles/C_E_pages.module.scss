@@ -54,11 +54,12 @@
 }
 
 .NO_RESULTS_FOUND{
-    margin-top: 2rem;
+    margin-top: 1rem;
     h1{
+        margin-bottom: 2rem;
         overflow: hidden;
         color: gray;
-        font-size: 1.6rem;
+        font-size: 2rem;
         font-style: italic;
 
         @media only screen and (min-width: 2501px){ 
@@ -71,6 +72,23 @@
 
         @media only screen and (min-width: 1500px) and (max-width: 2000px) { 
             font-size: 3rem; 
+        }
+    }
+
+    a{
+        font-size: 1.1rem;
+        
+
+        @media only screen and (min-width: 2501px){ 
+            font-size: 2.25rem; 
+        }
+
+        @media only screen and (min-width: 2001px) and (max-width: 2500px) { 
+            font-size: 2rem; 
+        }
+
+        @media only screen and (min-width: 1500px) and (max-width: 2000px) { 
+            font-size: 1.5rem; 
         }
     }
 }

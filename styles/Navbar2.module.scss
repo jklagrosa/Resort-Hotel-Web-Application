@@ -1,0 +1,233 @@
+@import "../styles/colors.module.scss";
+
+.navbar{
+position: fixed;
+top: 0;
+width: 100%;
+padding: 0.694rem 0;
+z-index: 99;
+transition: all 0.2s ease-out;
+
+// background-color: red;
+
+
+
+
+
+}
+
+#LOGOUT_BTN{
+    margin-left: 1rem;
+    cursor: pointer;
+    background: red;
+    color: white !important;
+    border-radius: 8px;
+}
+
+.BookNReservedIcons{
+    margin: 0 !important;
+    font-size: 1.5rem;
+
+
+    @media only screen and (min-width: 2501px) { 
+        font-size: 3.5rem;
+    }
+
+    @media only screen and (min-width: 2301px) and (max-width: 2500px) { 
+        font-size: 3rem;
+    }
+
+    @media only screen and (min-width: 2001px) and (max-width: 2300px) { 
+        font-size: 2.7rem;
+    }
+
+    @media only screen and (min-width: 1600px) and (max-width: 2000px) { 
+        font-size: 2rem;
+    }
+
+}
+
+// Change Navbar bg color when scrolling
+#changeNavColor{
+    transition: all 0.2s ease-in;
+    background-color: $PURPLE;
+    a{
+        color: $PINK-BG;
+    }
+}
+// end
+
+
+.brand{
+    font-size: 1.44rem;
+    a{
+        text-transform: uppercase;
+        // color: #080A52;
+        color: $PINK-BG;
+        font-weight: 700;
+
+        @media only screen and (min-width: 2501px) { 
+            font-size: 3rem;
+          }
+
+        @media only screen and (min-width: 2301px) and (max-width: 2500px) { 
+            font-size: 2.5rem;
+        }
+
+        @media only screen and (min-width: 1600px) and (max-width: 2300px) { 
+            font-size: 2.3rem;
+        }
+
+        &:hover{
+            color: #080A52;
+        }
+        span{
+        text-transform: lowercase;
+        font-weight: normal;
+
+
+            color: #fbeaeb;
+           
+        }
+    }
+}
+
+#navlinks, #LOGIN_BTN {
+    
+        margin-left: 1rem;
+        cursor: pointer;
+        background: $PURPLE;
+        color: white !important;
+        border-radius: 8px;
+  
+        &:hover{
+          transition: all 0.2s ease-out;
+             background-color: $PINK-BG;
+              color: $PURPLE !important;
+          }
+    
+}
+
+#navLinks a{
+
+    // color: $PINK-BG;
+    color: darkgrey;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s ease-in;
+
+    
+    @media only screen and (min-width: 2501px) { 
+        font-size: 2rem;
+    }
+
+    @media only screen and (min-width: 2301px) and (max-width: 2500px) { 
+        font-size: 1.953rem;
+    }
+
+    @media only screen and (min-width: 2001px) and (max-width: 2300px) { 
+        font-size: 1.563rem;
+    }
+
+    @media only screen and (min-width: 1600px) and (max-width: 2000px) { 
+        font-size: 1.25rem;
+    }
+
+
+ 
+
+
+
+    &:hover{
+    transition: all 0.2s ease-out;
+        color: #fbeaeb;
+    }
+}
+
+
+#navLinksChangeOnScroll > #LOGIN_BTN{
+        margin-left: 1rem;
+        cursor: pointer;
+        background: $PINK-BG ;
+        color: $PURPLE !important;
+        border-radius: 8px;
+
+        &:hover{
+            transition: all 0.2s ease-out;
+               background-color: $BLACK;
+                color: $PINK-BG !important;
+            }  
+}
+
+#navLinksChangeOnScroll a {
+    color: $PINK-BG;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s ease-in;
+
+    @media only screen and (min-width: 2501px) { 
+        font-size: 2rem;
+    }
+
+    @media only screen and (min-width: 2301px) and (max-width: 2500px) { 
+        font-size: 1.953rem;
+    }
+
+    @media only screen and (min-width: 2001px) and (max-width: 2300px) { 
+        font-size: 1.563rem;
+    }
+
+    @media only screen and (min-width: 1600px) and (max-width: 2000px) { 
+        font-size: 1.25rem;
+    }
+
+
+ 
+
+    
+
+    &:hover{
+        transition: all 0.2s ease-out;
+            color: $TEAL;
+        }
+}
+
+#changeLogoPlus {
+    color: $TEAL !important;
+}
+
+.hambugerIcon{
+    color: $PINK-BG;
+    font-size: 2rem;
+}
+
+.hideNavbarLinks{
+    @media only screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+.drawerLinks{
+    margin-top: 1rem;
+    a{
+        margin-bottom: 1rem;
+        display: block;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+
+        &:hover, &:active{
+            text-decoration: underline !important;
+        }
+    }
+}
+
+.offcanvas{
+    max-width: 250px;
+    width: 100%;
+}
+
+.offcanvasHeader{
+    background: $BLUE-BG;
+}
