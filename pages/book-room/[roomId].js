@@ -3,7 +3,7 @@ import axios from "axios";
 import { IoHeart, IoArrowForwardOutline } from "react-icons/io5";
 import styles from "../../styles/Roomid.module.scss";
 import { Container, Row, Col, Spinner, Modal } from "react-bootstrap";
-import Navbar from "../../components/Navbar";
+import Navbar2 from "../../components/Navbar2";
 import Footer from "../../components/Footer";
 import Copyright from "../../components/Copyright";
 import dbConnection from "../../mongodb/Dbconnection";
@@ -173,7 +173,7 @@ const Book_Room = ({ data }) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar2 />
 
       <div className={styles.PAGES_HEADER}>
         <h2>Book a Room</h2>
