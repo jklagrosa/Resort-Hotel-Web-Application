@@ -1,3 +1,5 @@
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 ## RESORT HOTEL WEB APPLICATION
 
 ![1](https://user-images.githubusercontent.com/104843990/168455972-29665798-1ffc-4853-b8fc-b12ee8ec1257.png)
