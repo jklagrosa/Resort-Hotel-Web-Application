@@ -174,10 +174,9 @@ const Events = () => {
                     onChange={(e) => setName(e.target.value)}
                     disabled={demo_user ? true : false}
                   />
+
+                  <label>Type of event</label>
                   <select required onChange={handleSelectedEvent}>
-                    <option disabled selected>
-                      Type of event
-                    </option>
                     <option value="birthday">Birthday</option>
                     <option value="wedding">Wedding</option>
                     <option value="debut">Debut</option>
