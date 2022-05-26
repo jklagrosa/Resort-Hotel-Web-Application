@@ -181,7 +181,7 @@ const EventsReservations = () => {
             )}
 
             {loading && (
-              <div className="text-center">
+              <div className="text-center" style={{ overflow: "hidden" }}>
                 <Spinner
                   animation="border"
                   role="status"

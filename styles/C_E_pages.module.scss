@@ -97,6 +97,7 @@
         padding: 4rem;
         background-color: $PINK-BG;
         color: $PINK-BG;
+        min-height: 80vh;
     
         @media only screen and (max-width: 576px) { 
             padding: 2rem 0.1rem;   
