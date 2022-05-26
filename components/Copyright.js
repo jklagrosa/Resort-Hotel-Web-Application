@@ -7,7 +7,7 @@ const Copyright = () => {
       <div className={styles.containerWrapper}>
         <Container fluid="lg">
           <p>
-            Copyright &copy; {new Date().getFullYear()}, JK Lagrosa. All Rights
+            Copyright &copy; {new Date().getFullYear()} JK Lagrosa. All Rights
             Reserved.
           </p>
         </Container>
