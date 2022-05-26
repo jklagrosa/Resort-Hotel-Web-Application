@@ -27,7 +27,7 @@ const Hero = () => {
 
         {/* SCROLL DOWN ANIMATION */}
 
-        <div className={styles.mouse_scroll}>
+        {/* <div className={styles.mouse_scroll}>
           <div className={styles.mouse}>
             <div className={styles.wheel}></div>
           </div>
@@ -36,7 +36,7 @@ const Hero = () => {
             <span className={styles.m_scroll_arrows} id={styles.doi}></span>
             <span className={styles.m_scroll_arrows} id={styles.trei}></span>
           </div>
-        </div>
+        </div> */} 
 
         {/* END */}
       </Container>
