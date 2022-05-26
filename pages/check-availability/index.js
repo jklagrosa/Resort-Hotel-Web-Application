@@ -90,7 +90,13 @@ const Check_Availablity = ({ q }) => {
       )}
 
       {!allDates && (
-        <div style={{ textAlign: "center", padding: "6rem" }}>
+        <div
+          style={{
+            padding: "4rem 1rem",
+            textAlign: "center",
+            minHeight: "80vh",
+          }}
+        >
           <Spinner animation="border" role="status" style={{ color: "black" }}>
             <span className="visually-hidden">Loading...</span>
           </Spinner>

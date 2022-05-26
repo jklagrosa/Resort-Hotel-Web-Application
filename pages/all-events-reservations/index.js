@@ -127,76 +127,76 @@ const EventsReservations = () => {
             <h2>Events Reservations</h2>
           </div>
           <div className={styles.containerWrapper}>
-            <Container fluid="lg"></Container>
-
-            {data.length > 0 && (
-              <div className={styles.dateResults}>
-                <Table striped bordered hover responsive>
-                  <thead>
-                    <tr>
-                      <th>Type of event</th>
-                      <th>Event date</th>
-                      <th>Event description</th>
-                      <th>Start at</th>
-                      <th>End at</th>
-                      <th>Cancel reservation</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.map((x) => (
-                      <tr key={x._id}>
-                        <td>{x.event}</td>
-                        <td>{x.event_date}</td>
-                        <td>{x.event_desc}</td>
-                        <td>{x.startat}</td>
-                        <td>{x.endat}</td>
-                        <td>
-                          {!cancelLoading && (
-                            <button
-                              onClick={() => handleCancelReservation(x._id)}
-                              className={styles.CANCEL_BTN}
-                            >
-                              Cancel
-                            </button>
-                          )}
-
-                          {cancelLoading && (
-                            <button className={styles.CANCEL_BTN}>
-                              <Spinner animation="border" size="sm" />
-                            </button>
-                          )}
-                        </td>
+            <Container fluid="lg">
+              {data.length > 0 && (
+                <div className={styles.dateResults}>
+                  <Table striped bordered hover responsive>
+                    <thead>
+                      <tr>
+                        <th>Type of event</th>
+                        <th>Event date</th>
+                        <th>Event description</th>
+                        <th>Start at</th>
+                        <th>End at</th>
+                        <th>Cancel reservation</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </Table>
-              </div>
-            )}
+                    </thead>
+                    <tbody>
+                      {data.map((x) => (
+                        <tr key={x._id}>
+                          <td>{x.event}</td>
+                          <td>{x.event_date}</td>
+                          <td>{x.event_desc}</td>
+                          <td>{x.startat}</td>
+                          <td>{x.endat}</td>
+                          <td>
+                            {!cancelLoading && (
+                              <button
+                                onClick={() => handleCancelReservation(x._id)}
+                                className={styles.CANCEL_BTN}
+                              >
+                                Cancel
+                              </button>
+                            )}
 
-            {isEmpty && (
-              <div className={styles.NO_RESULTS_FOUND}>
-                <h1>No results found.</h1>
-                <Link href="/">Book now</Link>
-              </div>
-            )}
+                            {cancelLoading && (
+                              <button className={styles.CANCEL_BTN}>
+                                <Spinner animation="border" size="sm" />
+                              </button>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </div>
+              )}
 
-            {loading && (
-              <div className="text-center" style={{ overflow: "hidden" }}>
-                <Spinner
-                  animation="border"
-                  role="status"
-                  style={{ color: "black" }}
-                >
-                  <span className="visually-hidden">Loading...</span>
-                </Spinner>
-              </div>
-            )}
+              {isEmpty && (
+                <div className={styles.NO_RESULTS_FOUND}>
+                  <h1>No results found.</h1>
+                  <Link href="/">Book now</Link>
+                </div>
+              )}
 
-            {isError && (
-              <div className={styles.NO_RESULTS_FOUND}>
-                <h1>Something went wrong, please try again later.</h1>
-              </div>
-            )}
+              {loading && (
+                <div className="text-center" style={{ overflow: "hidden" }}>
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    style={{ color: "black" }}
+                  >
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                </div>
+              )}
+
+              {isError && (
+                <div className={styles.NO_RESULTS_FOUND}>
+                  <h1>Something went wrong, please try again later.</h1>
+                </div>
+              )}
+            </Container>
           </div>
           <Footer />
           <Copyright />

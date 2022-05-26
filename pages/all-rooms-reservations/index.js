@@ -2,7 +2,7 @@ import styles from "../../styles/ALL_R_pages.module.scss";
 import Navbar2 from "../../components/Navbar2";
 import Footer from "../../components/Footer";
 import Copyright from "../../components/Copyright";
-import { Row, Col, Spinner } from "react-bootstrap";
+import { Row, Col, Spinner, Container } from "react-bootstrap";
 import { IoHeart } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
 import { useEffect, useState } from "react";
@@ -124,75 +124,85 @@ const RoomsReservation = () => {
           </div>
 
           {parentLoader && (
-            <div style={{ padding: "4rem 1rem", textAlign: "center" }}>
+            <div
+              style={{
+                padding: "4rem 1rem",
+                textAlign: "center",
+                minHeight: "80vh",
+              }}
+            >
               <Spinner animation="border" />
             </div>
           )}
 
           {!parentLoader && (
             <div className={styles.containerWrapper}>
-              {data.length > 0 &&
-                data.map((x) => (
-                  <div className={styles.resultsContainer} key={x._id}>
-                    <Row className="g-0">
-                      <Col xs={12} md={4}>
-                        <img
-                          src={`/rooms/${x.img}`}
-                          className={styles.IMAGE_CARD}
-                        />
-                      </Col>
-                      <Col xs={12} md={8}>
-                        <div className={styles.room_details}>
-                          <span className={styles.HEADER_TITLE}>{x.title}</span>
-
-                          {x.rating >= 5 && (
-                            <span
-                              className="badge bg-danger"
-                              id={styles.Ratings_Badge}
-                            >
-                              {x.rating} <IoHeart />
+              <Container fluid="lg">
+                {data.length > 0 &&
+                  data.map((x) => (
+                    <div className={styles.resultsContainer} key={x._id}>
+                      <Row className="g-0">
+                        <Col xs={12} md={4}>
+                          <img
+                            src={`/rooms/${x.img}`}
+                            className={styles.IMAGE_CARD}
+                          />
+                        </Col>
+                        <Col xs={12} md={8}>
+                          <div className={styles.room_details}>
+                            <span className={styles.HEADER_TITLE}>
+                              {x.title}
                             </span>
-                          )}
-                          {x.rating < 5 && (
-                            <span
-                              className="badge bg-success"
-                              id={styles.Ratings_Badge}
-                            >
-                              {x.rating} <IoHeart />
-                            </span>
-                          )}
-                          <hr className="my-2" />
-                          <h6>CheckIn: {x.checkin}</h6>
-                          <h6>CheckOut: {x.checkout}</h6>
-                          <h6>Adult: {x.adult == "" ? "1" : x.adult}</h6>
-                          <h6>
-                            Children: {x.children == "" ? "0" : x.children}
-                          </h6>
-                          <h6>Price: ₱{x.price} / Night</h6>
 
-                          {!loading && (
-                            <button onClick={() => handleDeleteRoom(x._id)}>
-                              <MdDelete /> Delete
-                            </button>
-                          )}
+                            {x.rating >= 5 && (
+                              <span
+                                className="badge bg-danger"
+                                id={styles.Ratings_Badge}
+                              >
+                                {x.rating} <IoHeart />
+                              </span>
+                            )}
+                            {x.rating < 5 && (
+                              <span
+                                className="badge bg-success"
+                                id={styles.Ratings_Badge}
+                              >
+                                {x.rating} <IoHeart />
+                              </span>
+                            )}
+                            <hr className="my-2" />
+                            <h6>CheckIn: {x.checkin}</h6>
+                            <h6>CheckOut: {x.checkout}</h6>
+                            <h6>Adult: {x.adult == "" ? "1" : x.adult}</h6>
+                            <h6>
+                              Children: {x.children == "" ? "0" : x.children}
+                            </h6>
+                            <h6>Price: ₱{x.price} / Night</h6>
 
-                          {loading && (
-                            <button>
-                              <Spinner animation="border" size="sm" />
-                            </button>
-                          )}
-                        </div>
-                      </Col>
-                    </Row>
+                            {!loading && (
+                              <button onClick={() => handleDeleteRoom(x._id)}>
+                                <MdDelete /> Delete
+                              </button>
+                            )}
+
+                            {loading && (
+                              <button>
+                                <Spinner animation="border" size="sm" />
+                              </button>
+                            )}
+                          </div>
+                        </Col>
+                      </Row>
+                    </div>
+                  ))}
+
+                {isEmpty && (
+                  <div className={styles.NO_RESULTS_FOUND}>
+                    <h1>No results found.</h1>
+                    <Link href="/">Reserve now</Link>
                   </div>
-                ))}
-
-              {isEmpty && (
-                <div className={styles.NO_RESULTS_FOUND}>
-                  <h1>No results found.</h1>
-                  <Link href="/">Reserve now</Link>
-                </div>
-              )}
+                )}
+              </Container>
             </div>
           )}
           <Footer />
