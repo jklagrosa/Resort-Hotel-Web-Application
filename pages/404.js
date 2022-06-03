@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import styles from "../styles/404.module.scss";
-import Navbar from "../components/Navbar";
+import Navbar2 from "../components/Navbar2";
 import Footer from "../components/Footer";
 import Copyright from "../components/Copyright";
 import { useRouter } from "next/router";
@@ -9,7 +9,7 @@ const PageNotFound = () => {
   const router = useRouter();
   return (
     <>
-      <Navbar />
+      <Navbar2 />
       <div className={styles.containerWrapper}>
         <Container fluid="lg">
           <div className={styles.NOT_FOUND_WRAPPER}>
