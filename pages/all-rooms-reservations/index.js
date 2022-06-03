@@ -198,7 +198,7 @@ const RoomsReservation = () => {
 
                 {isEmpty && (
                   <div className={styles.NO_RESULTS_FOUND}>
-                    <h1>No results found.</h1>
+                    <h1>No reservation found.</h1>
                     <Link href="/">Reserve now</Link>
                   </div>
                 )}

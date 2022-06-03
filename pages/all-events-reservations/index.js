@@ -174,7 +174,7 @@ const EventsReservations = () => {
 
               {isEmpty && (
                 <div className={styles.NO_RESULTS_FOUND}>
-                  <h1>No results found.</h1>
+                  <h1>No reservation found.</h1>
                   <Link href="/">Book now</Link>
                 </div>
               )}
