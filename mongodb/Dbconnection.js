@@ -8,7 +8,7 @@ const Dbconnection = async () => {
 
   return await mongoose
     .connect(
-      process.env.mongo_uri,
+      process.env?.mongo_uri,
 
       {
         useNewUrlParser: true,
