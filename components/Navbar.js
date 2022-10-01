@@ -96,11 +96,21 @@ const Navigation = () => {
               id={colorChange ? styles.navLinksChangeOnScroll : styles.navLinks}
             >
               <Nav.Link onClick={() => handlePages("/")}>Home</Nav.Link>
-              <Nav.Link href="#about">About</Nav.Link>
-              <Nav.Link href="#rooms">Rooms</Nav.Link>
-              <Nav.Link href="#events">Events</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
-              <Nav.Link href="#faq">FAQ</Nav.Link>
+              <Nav.Link href={router.pathname !== "/" ? "/" : "#about"}>
+                About
+              </Nav.Link>
+              <Nav.Link href={router.pathname !== "/" ? "/" : "#rooms"}>
+                Rooms
+              </Nav.Link>
+              <Nav.Link href={router.pathname !== "/" ? "/" : "#events"}>
+                Events
+              </Nav.Link>
+              <Nav.Link href={router.pathname !== "/" ? "/" : "#contact"}>
+                Contact
+              </Nav.Link>
+              <Nav.Link href={router.pathname !== "/" ? "/" : "#faq"}>
+                FAQ
+              </Nav.Link>
 
               {/* IF NOT LOGGED IN */}
               {!isLoggedin && (
@@ -162,19 +172,34 @@ const Navigation = () => {
         </Offcanvas.Header>
         <Offcanvas.Body className={styles.drawerLinks}>
           <a onClick={() => handlePages("/")}>Home</a>
-          <a href="#about" style={{ color: "black", textDecoration: "none" }}>
+          <a
+            href={router.pathname !== "/" ? "/" : "#about"}
+            style={{ color: "black", textDecoration: "none" }}
+          >
             About
           </a>
-          <a href="#rooms" style={{ color: "black", textDecoration: "none" }}>
+          <a
+            href={router.pathname !== "/" ? "/" : "#rooms"}
+            style={{ color: "black", textDecoration: "none" }}
+          >
             Rooms
           </a>
-          <a href="#events" style={{ color: "black", textDecoration: "none" }}>
+          <a
+            href={router.pathname !== "/" ? "/" : "#events"}
+            style={{ color: "black", textDecoration: "none" }}
+          >
             Events
           </a>
-          <a href="#contact" style={{ color: "black", textDecoration: "none" }}>
+          <a
+            href={router.pathname !== "/" ? "/" : "#contact"}
+            style={{ color: "black", textDecoration: "none" }}
+          >
             Contact
           </a>
-          <a href="#faq" style={{ color: "black", textDecoration: "none" }}>
+          <a
+            href={router.pathname !== "/" ? "/" : "#faq"}
+            style={{ color: "black", textDecoration: "none" }}
+          >
             FAQ
           </a>
 
